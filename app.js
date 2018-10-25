@@ -1,12 +1,12 @@
 import express from 'express';
-// import db from './mongodb/db.js';
+import db from './mongodb/db.js';
 import router from './routes/index.js';
 import cookieParser from 'cookie-parser'
 import session from 'express-session';
 import connectMongo from 'connect-mongo';
 import bodyParser from 'body-parser'
 // import history from 'connect-history-api-fallback';
-import config from './config'
+import config from './baseConfig'
 
 const app = express();
 
