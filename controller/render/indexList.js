@@ -11,7 +11,6 @@ class IndexList {
         let index = IndexLists
         let results = await index.find({}, {})
         res.send(results)
-
     }
 }
 
