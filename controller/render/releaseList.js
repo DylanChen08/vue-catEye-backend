@@ -12,7 +12,6 @@ class ReleaseList {
         console.log(results)
         res.send(results)
     }
-
 }
 
 
