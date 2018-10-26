@@ -1,7 +1,9 @@
-import indexList from './indexList'
-import releaseList from './releaseList'
+// import indexList from './indexList'
+// import releaseList from './releaseList'
+
+import  renderRouter from './renderRouter'
 
 export default app => {
-    app.use('/index/movies', indexList);
-    app.use('/movies/released',releaseList)
+    app.use('/common', renderRouter);
+    // app.use('/movies/released',releaseList)
 }

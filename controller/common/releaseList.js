@@ -1,4 +1,4 @@
-import ReleaseLists from '../../model/render/releaseList'
+import ReleaseLists from '../../model/common/releaseList'
 
 
 class ReleaseList {

@@ -1,4 +1,4 @@
-import IndexLists from '../../model/render/indexLists'
+import IndexLists from '../../model/common/indexLists'
 
 
 class IndexList {
