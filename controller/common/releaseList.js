@@ -1,21 +1,18 @@
 import ReleaseLists from '../../model/common/releaseList'
 
-/*
-*
-* 控制器：正在上映
-* 功能：渲染数据,处理跳转事件
-*
-*
-* */
 
 class ReleaseList {
     constructor() {
-        this.releaseMovieRender = this.releaseMovieRender.bind(this)
+        this.releasedMovieRender = this.releasedMovieRender.bind(this)
         this.getSpecificMovie = this.getSpecificMovie.bind(this)
     }
 
-    //获取正在上映的电影
-    async releaseMovieRender(req, res, next) {
+    /*
+    * 获取正在上映的电影
+    * @return: releaseList
+    *
+    * */
+    async releasedMovieRender(req, res, next) {
         let release = ReleaseLists
         let results = await release.find({}, {})
         console.log('请求 电影-正在上映的数据')
@@ -27,10 +24,13 @@ class ReleaseList {
         })
     }
 
-    //获取单个电影的数据
+    /*
+    * 获取单个电影的数据
+    * @params:movieId
+    *
+    * */
     async getSpecificMovie(req, res, next) {
-
-        if (true) {
+        if (req.params.movieId) {
             const movieId = parseInt(req.params.movieId)
             let release = ReleaseLists
             let results = await release.find({
@@ -43,8 +43,12 @@ class ReleaseList {
                 msg: 'ok',
                 data: results
             })
+        } else {
+            res.send({
+                status: 0,
+                msg: '未找到相关数据'
+            })
         }
-
     }
 
 }

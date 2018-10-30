@@ -12,9 +12,8 @@ const router = express.Router();
 
 
 router.get("/index", Index.indexMovieRender);    //首页
-router.get("/released", Release.releaseMovieRender);  //正在上映的电影
+router.get("/released", Release.releasedMovieRender);  //正在上映的电影
 router.get("/movies/:movieId", Release.getSpecificMovie);  //获取单个电影数据
-
 
 
 export default router;
