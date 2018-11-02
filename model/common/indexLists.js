@@ -2,11 +2,11 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema;
 
-const indexListsSchema = new Schema({}, {collection: 'indexList'})
+const carouselSchema = new Schema({}, {collection: 'carousel'})
 
-indexListsSchema.index({id: 1});
+carouselSchema.index({id: 1});
 
-const IndexLists = mongoose.model('IndexLists', indexListsSchema)
+const IndexLists = mongoose.model('IndexLists', carouselSchema)
 
 export default IndexLists
 
