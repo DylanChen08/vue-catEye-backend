@@ -9,6 +9,7 @@ class ShortComment {
 
     async getComments(req, res, next) {
         if (req.params.movieId) {
+            console.log(1102)
             const movieId = parseInt(req.params.movieId)
             let comments = ShortComments
             let results = await comments.find({
