@@ -3,13 +3,36 @@ import PreviewLists from '../../model/common/previewList'
 
 class PreviewList {
     constructor() {
+        this.getALLPreview = this.getALLPreview.bind(this)
         this.previewMovieRender = this.previewMovieRender.bind(this)
         this.getSpecificMovie = this.getSpecificMovie.bind(this)
     }
 
+    //获取正在上映的全部电影
+
+    async getALLPreview(req, res, next) {
+        let preview = PreviewLists
+        let results = await preview.find({}, {})
+        console.log('请求 电影-未上映的数据')
+        console.log(results.length)
+        //判断所查询的数据是否为空
+        if (results.length !== 0) {
+            res.send({
+                status: 1,
+                msg: 'ok',
+                data: results
+            })
+        } else {
+            res.send({
+                status: 1,
+                msg: 'empty'
+            })
+        }
+    }
+
     /*
-    * 获取正在上映的电影
-    * @return: releaseList
+    * 分页获取正在上映的电影
+    * @page:页码
     *
     * */
     async previewMovieRender(req, res, next) {

@@ -7,6 +7,27 @@ class ReleaseList {
         this.getSpecificMovie = this.getSpecificMovie.bind(this)
     }
 
+    async getALLReleased(req, res, next) {
+        let release = ReleaseLists
+        let results = await release.find({}, {})
+        console.log('请求 电影-正在上映的数据')
+        console.log(results.length)
+        //判断所查询的数据是否为空
+        if (results.length !== 0) {
+            res.send({
+                status: 1,
+                msg: 'ok',
+                data: results
+            })
+        } else {
+            res.send({
+                status: 1,
+                msg: 'empty'
+            })
+        }
+
+    }
+
     /*
     * 获取正在上映的电影
     * @return: releaseList

@@ -15,8 +15,10 @@ const router = express.Router();
 
 router.get("/index", Index.indexMovieRender);    //首页
 router.get("/carousel", Index.indexCarouselRender);    //首页轮播图
-router.get("/released/:page", Release.releasedMovieRender);  //正在上映的电影
-router.get("/preview/:page", Preview.previewMovieRender);  //未上映的电影
+router.get("/released", Release.getALLReleased);  //获取全部正在上映的电影
+router.get("/released/:page", Release.releasedMovieRender);  //分页获取正在上映的电影
+router.get("/preview", Preview.getALLPreview);  //获取全部未上映的电影
+router.get("/preview/:page", Preview.previewMovieRender);  //分页获取未上映的电影
 router.get("/movies/:movieId", Release.getSpecificMovie);  //获取单个已经上映的电影数据
 router.get("/movies/:movieId", Preview.getSpecificMovie);  //获取单个未上映的电影数据
 router.get("/comments/:movieId", Comments.getComments);  //获取单个电影数据
