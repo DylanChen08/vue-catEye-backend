@@ -3,6 +3,7 @@ import Index from "../controller/common/indexList";
 import Release from "../controller/common/releaseList";
 import Preview from "../controller/common/previewList";
 import Comments from "../controller/common/comments"
+import TV from "../controller/common/tvSeries"
 
 /*
 *
@@ -22,6 +23,6 @@ router.get("/preview/:page", Preview.previewMovieRender);  //分页获取未上�
 router.get("/movies/:movieId", Release.getSpecificMovie);  //获取单个已经上映的电影数据
 router.get("/movies/:movieId", Preview.getSpecificMovie);  //获取单个未上映的电影数据
 router.get("/comments/:movieId", Comments.getComments);  //获取单个电影数据
-
+router.get("/tv", TV.getALLTvSeries);  //获取全部电视剧
 
 export default router;

@@ -20,13 +20,13 @@ class ReleaseList {
                 data: results
             })
         } else {
-            res.send({
+
+        }      res.send({
                 status: 1,
                 msg: 'empty'
             })
         }
 
-    }
 
     /*
     * 获取正在上映的电影
