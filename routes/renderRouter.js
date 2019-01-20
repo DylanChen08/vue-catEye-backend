@@ -22,7 +22,8 @@ router.get("/preview", Preview.getALLPreview);  //获取全部未上映的电影
 router.get("/preview/:page", Preview.previewMovieRender);  //分页获取未上映的电影
 router.get("/movies/:movieId", Release.getSpecificMovie);  //获取单个已经上映的电影数据
 router.get("/movies/:movieId", Preview.getSpecificMovie);  //获取单个未上映的电影数据
-router.get("/comments/:movieId", Comments.getComments);  //获取单个电影数据
+router.get("/comments/:movieId", Comments.getComments);  //获取单个评论电影数据
 router.get("/tv", TV.getALLTvSeries);  //获取全部电视剧
+router.get("/tv/:tvId", TV.getSpecificTvSeries);  //获取单个电视剧的数据
 
 export default router;

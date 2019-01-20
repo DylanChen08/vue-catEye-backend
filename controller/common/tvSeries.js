@@ -26,6 +26,34 @@ class TvSeries {
         }
 
     }
+
+    /*
+    * 获取单个已经上映的电视剧的数据
+    * @params:tvId
+    *
+    * */
+    async getSpecificTvSeries(req, res, next) {
+        if (req.params.tvId) {
+            const tvId = parseInt(req.params.tvId)
+            let tvS = tvSeries
+            let results = await tvS.find({
+                "id": tvId
+            });
+            console.log('tvid', tvId)
+            console.log(results)
+            res.send({
+                status: 1,
+                msg: 'ok',
+                data: results
+            })
+        } else {
+            res.send({
+                status: 0,
+                msg: '未找到相关数据'
+            })
+        }
+    }
+
 }
 
 export default new TvSeries()
