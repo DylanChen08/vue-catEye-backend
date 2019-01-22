@@ -4,6 +4,7 @@ import Release from "../controller/common/releaseList";
 import Preview from "../controller/common/previewList";
 import Comments from "../controller/common/comments"
 import TV from "../controller/common/tvSeries"
+import Books from  "../controller/common/books"
 
 /*
 *
@@ -25,5 +26,7 @@ router.get("/movies/:movieId", Preview.getSpecificMovie);  //获取单个未上�
 router.get("/comments/:movieId", Comments.getComments);  //获取单个评论电影数据
 router.get("/tv", TV.getALLTvSeries);  //获取全部电视剧
 router.get("/tv/:tvId", TV.getSpecificTvSeries);  //获取单个电视剧的数据
+router.get("/books", Books.getAllBooks);  //获取全部书籍
+router.get("/books/:bookId", Books.getSpecificBook);  //获取单本书籍的数据
 
 export default router;
