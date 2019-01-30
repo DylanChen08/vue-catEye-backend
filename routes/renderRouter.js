@@ -30,6 +30,6 @@ router.get("/tv/:tvId", TV.getSpecificTvSeries);  //获取单个电视剧的数�
 router.get("/books", Books.getAllBooks);  //获取全部书籍
 router.get("/books/:bookId", Books.getSpecificBook);  //获取单本书籍的数据
 router.get("/shows", varietyShows.getAllVarietyShows);  //获取全部综艺
-router.get("/shows/:showId", varietyShows.getSpecificShow);  //获取单个综艺的数据
+router.get("/show/:showId", varietyShows.getSpecificShow);  //获取单个综艺的数据
 
 export default router;
